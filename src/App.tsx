@@ -21,34 +21,48 @@ function App() {
       type: 'text',
       placeholder: 'Username',
       label: 'Username',
+      errorMsg: 'Min 3, max 16, no special characters',
+      required: true,
+      pattern: '[A-Za-z0-9]{3,16}$',
     },
     {
       id: 2,
       name: 'email',
-      type: 'email',
+      type: 'email', // pattern not needed, as type = email
       placeholder: 'Email',
       label: 'Email',
+      errorMsg: 'should be valid email address',
+      required: true,
     },
     {
       id: 3,
       name: 'birthday',
-      type: 'text',
+      type: 'date',
       placeholder: 'Birthday',
       label: 'Birthday',
+      errorMsg: '',
     },
     {
       id: 4,
       name: 'password',
-      type: 'password',
+      type: 'text',
       placeholder: 'Password',
       label: 'Password',
+      errorMsg:
+        'Minimum 8, max 20, should include at least 1 letter, 1 number and 1 special character',
+      required: true,
+      pattern:
+        '(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$',
     },
     {
       id: 5,
       name: 'confirmPassword',
-      type: 'password',
+      type: 'text',
       placeholder: 'Confirm Password',
       label: 'Confirm Password',
+      errorMsg: "Passwords don't match",
+      required: true,
+      pattern: values.password,
     },
   ]
 
